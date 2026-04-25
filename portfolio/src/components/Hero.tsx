@@ -3,10 +3,10 @@
 import { useEffect, useRef, useState } from "react";
 
 const PHRASES = [
-  "Ingénieur Fullstack",
-  "Data engineer",
-  "JavaScript @ Caseware",
-  "ESIEE Paris · Promo 2028",
+  "Fullstack",
+  "Cloud · Data",
+  "Algorithmie",
+  "Machine Learning · LLM",
 ];
 
 function Typewriter() {
