@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+/* Static tokens — never change with theme */
+@theme inline {
+  --font-sans: var(--font-jakarta);
+  --font-mono: var(--font-jetbrains);
+  --color-accent:     #6366f1;
+  --color-accent-dim: #4f46e5;
+  --color-green:      #34d399;
+}
+
+/* Dynamic tokens — overridden by [data-theme="light"] */
+:root {
+  --bg:      #0c0c10;
+  --bg-2:    #111118;
+  --bg-3:    #1a1a24;
+  --bg-card: #15151e;
+  --border:  #252530;
+  --border-2:#2e2e3a;
+  --nav-bg:  #0c0c10cc;
+  --text:    #e8e8f0;
+  --text-2:  #9191a8;
+  --text-3:  #5a5a70;
+  color-scheme: dark;
+}
+
+[data-theme="light"] {
+  --bg:      #f8f8fc;
+  --bg-2:    #f0f0f8;
+  --bg-3:    #e8e8f4;
+  --bg-card: #ffffff;
+  --border:  #dddde8;
+  --border-2:#c8c8d8;
+  --nav-bg:  #f8f8fccc;
+  --text:    #16161e;
+  --text-2:  #5a5a70;
+  --text-3:  #9191a8;
+  color-scheme: light;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+  transition: background 0.3s, color 0.3s;
+}
+
+* { box-sizing: border-box; }
+
+/* Interactive utility classes (used in server components) */
+.nav-link {
+  color: var(--text-2);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-link:hover { color: var(--text); }
+
+.ghost-btn {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 11px 22px; border-radius: 8px; font-size: 14px; font-weight: 600;
+  text-decoration: none; background: transparent; color: var(--text-2);
+  border: 1px solid var(--border-2); transition: all 0.2s;
+}
+.ghost-btn:hover {
+  border-color: #6366f1; color: #6366f1;
+  transform: translateY(-1px);
+}
+
+.primary-btn {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 11px 22px; border-radius: 8px; font-size: 14px; font-weight: 600;
+  text-decoration: none; background: #6366f1; color: #fff;
+  box-shadow: 0 0 20px #6366f133; transition: all 0.2s;
+}
+.primary-btn:hover { background: #4f46e5; transform: translateY(-1px); }
+
+.skill-tag {
+  font-size: 12px; font-weight: 500; padding: 5px 11px;
+  border-radius: 6px; border: 1px solid var(--border-2);
+  color: var(--text-2); background: var(--bg-card);
+  transition: all 0.18s; cursor: default;
+}
+.skill-tag:hover { border-color: #6366f1; color: #6366f1; background: #6366f133; }
